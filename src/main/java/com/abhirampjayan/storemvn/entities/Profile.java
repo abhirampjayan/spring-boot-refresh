@@ -1,9 +1,6 @@
 package com.abhirampjayan.storemvn.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,4 +27,9 @@ public class Profile {
 
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    private User user;
 }

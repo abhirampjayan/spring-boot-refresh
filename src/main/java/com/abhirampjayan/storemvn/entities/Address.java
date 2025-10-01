@@ -1,10 +1,13 @@
 package com.abhirampjayan.storemvn.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
+@ToString
 @Setter
 @Entity
 @Table(name = "addresses")
@@ -25,4 +28,11 @@ public class Address {
 
     @Column(name = "pincode")
     private String pincode;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @ToString.Exclude
+    private User user;
+
+
 }

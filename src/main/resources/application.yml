@@ -1,5 +1,11 @@
 spring:
   application:
     name: store-mvn
+  datasource:
+    url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
+    username: root
+    password: admin9980
 app:
   page-size: 10
+
+payment-gateway : paypal
